@@ -1,0 +1,44 @@
+% !TeX root = index.tex
+% define document class
+\documentclass{scrreprt}
+
+% apply pk package
+\usepackage{../lib/pk}
+
+% set variables
+\newcommand{\varAuthor}{Robin Bühler, Peter Rutschmann}
+\newcommand{\varCompany}{} % Firmenname
+\newcommand{\varTitle}{Expertencheckliste: für die Durchführung einer IPA als Nebenexperte}
+\newcommand{\varVersion}{Version 2023.22.12}
+
+% footer and headings
+\rohead[\varTitle]{\varTitle}
+\lofoot[\today]{\today}
+\cfoot[\varAuthor\\Version \varVersion]{\varVersion}
+\rofoot[Seite \pagemark{} von \pageref{LastPage}]{Seite \pagemark{} von \pageref{LastPage}}
+
+% create document
+\begin{document}
+\begin{Form}
+  \chapter*{\varTitle}
+  Bei geschlechterspezifischen Personenbezeichnungen sind immer alle Geschlechter gemeint.\\
+  \\
+  \sbox\TBox{Arbeitstitel: }\TextField[charsize=10pt, width=\dimexpr\linewidth-\wd\TBox]{Arbeitstitel:}
+  \sbox\TBox{Kandidat: }\TextField[charsize=10pt, width=\dimexpr\linewidth-\wd\TBox]{Kandidat:}
+  \sbox\TBox{Vr.Fachkraft: }\TextField[charsize=10pt, width=\dimexpr\linewidth-\wd\TBox]{Vr.Fachkraft:}
+  \sbox\TBox{Hauptexperte: }\TextField[charsize=10pt, width=\dimexpr\linewidth-\wd\TBox]{Hauptexperte:}
+  \sbox\TBox{Nebenexperte: }\TextField[charsize=10pt, width=\dimexpr\linewidth-\wd\TBox]{Nebenexperte:}
+  \input{sections/1_preparation}
+  \newpage
+  \input{sections/2_visit_ipa}
+  \input{sections/3_interruptions}
+  \newpage
+  \input{sections/4_survey-document}
+  \newpage
+  \input{sections/5_presentation}
+  \newpage
+  \input{sections/6_assessment}
+  \newpage
+  \input{sections/9_submit}
+\end{Form}
+\end{document}
